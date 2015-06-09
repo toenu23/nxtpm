@@ -1,6 +1,6 @@
 {
   "name": "nxtpm",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Proof of concept blockchain-verified package manager",
   "scripts": {
     "test": "mocha"
