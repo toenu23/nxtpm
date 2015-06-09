@@ -2,12 +2,19 @@
   "name": "nxtpm",
   "version": "0.0.1",
   "description": "Proof of concept blockchain-verified package manager",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "author": "toenu <toenu23@gmail.com> (http://nxtresource.com/)",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/toenu23/nxtpm.git"
+  },
+  "main": "./index",
+  "bin": {
+    "nxtpm": "./bin/nxtpm"
+  },
   "dependencies": {
     "log": "^1.4.0",
     "prompt": "^0.2.14",
@@ -15,5 +22,12 @@
     "tar.gz": "^0.1.1",
     "tmp": "0.0.26",
     "node-jay": "^1.0.0"
-  }
+  },
+  "devDependencies": {
+    "mocha": "^2.2.5"
+  },
+  "bugs": {
+    "url": "https://github.com/toenu23/nxtpm/issues"
+  },
+  "homepage":"https://github.com/toenu23/nxtpm"
 }
