@@ -1,0 +1,19 @@
+{
+  "name": "nxtpm",
+  "version": "0.0.1",
+  "description": "Proof of concept blockchain-verified package manager",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "toenu <toenu23@gmail.com> (http://nxtresource.com/)",
+  "license": "MIT",
+  "dependencies": {
+    "log": "^1.4.0",
+    "prompt": "^0.2.14",
+    "request": "^2.57.0",
+    "tar.gz": "^0.1.1",
+    "tmp": "0.0.26",
+    "node-jay": "^1.0.0"
+  }
+}
