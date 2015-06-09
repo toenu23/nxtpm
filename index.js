@@ -1,7 +1,7 @@
 module.exports = function run() {
 
   var APP_NAME = 'nxtpm';
-  var VERSION = '0.0.1';
+  var VERSION = '0.0.3';
 
   var fs = require('fs');
   var path = require('path');
