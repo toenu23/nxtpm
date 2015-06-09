@@ -24,7 +24,7 @@
   },
   "sha256": {
     "description": "SHA256 checksum",
-    "required": true
+    "required": false
   },
   "homepage": {
     "description": "Project homepage URL",
