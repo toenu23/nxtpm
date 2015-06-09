@@ -57,7 +57,7 @@ describe('Package', function() {
         checksum = hash.digest('hex');
         assert.strictEqual(
           checksum,
-          'e4fc4a72fb848f86601302e7c16d17e2d8b67d54009f1e9548fc38ff8a213f99'
+          'bbdb29842043ab88456536d15f8ea34eee115e62678bda000e95442b07ec7c76'
         );
         fs.unlinkSync(outfile);
         done();
