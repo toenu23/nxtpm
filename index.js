@@ -84,7 +84,7 @@ module.exports = function run() {
       }
       console.log(APP_NAME + ' ' + VERSION);
       console.log(
-        'Usage: nxtpm <config|install|package|publish> <args>'
+        'Usage: nxtpm <config|install|init|package|publish> <args>'
       );
     }
   }
