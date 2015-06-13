@@ -10,7 +10,7 @@ var nxt = require('./lib/nxt.js');
 var package = require('./lib/package.js');
 var installPackage = require('./lib/install.js');
 var publishPackage = require('./lib/publish.js');
-      
+
 module.exports = {
   run: function(command, args, callback) {
 
@@ -36,7 +36,9 @@ module.exports = {
 
     var confDir = homeDir + '/.' + NXTPM.appName;
     var configDirExists = fs.existsSync(confDir);
-    var configFileExists = fs.existsSync(confDir + '/' + NXTPM.appName + '.json');
+    var configFileExists = fs.existsSync(
+      confDir + '/' + NXTPM.appName + '.json'
+    );
     if (!configDirExists || !configFileExists) {
       config.createConfig(args);
       return;
