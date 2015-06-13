@@ -118,6 +118,7 @@ module.exports = {
   config: config,
   init: init,
   nxt: nxt,
+  package: package,
   installPackage: installPackage,
   publishPackage: publishPackage,
 };
