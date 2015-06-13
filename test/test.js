@@ -2,15 +2,11 @@ var fs = require('fs');
 var assert = require('assert');
 var crypto = require('crypto');
 
-global.NXTPM = {
-  appName: 'nxtpm',
-  account: 'NXT-PACK-JWE9-VGPZ-CZN9D',
-};
-
-var config = require('../lib/config.js');
-var init = require('../lib/init.js');
-var nxt = require('../lib/nxt.js');
-var package = require('../lib/package.js');
+var nxtpm = require('../index');
+var config = nxtpm.config;
+var init = nxtpm.init;
+var nxt = nxtpm.nxt;
+var package = nxtpm.package;
 
 describe('Config', function() {
   var confObj;
@@ -52,7 +48,7 @@ describe('Package', function() {
   it('should package a folder', function(done) {
     var dir = __dirname + '/testpkg';
     var outfile = __dirname + '/test.tgz';
-    package.compressDir(dir, outfile, function() {
+    package.compressDir(dir, outfile, false, function() {
       var hash = crypto.createHash('sha256');
       var stream = fs.createReadStream(outfile);
       stream.on('data', function(data) {
@@ -62,7 +58,7 @@ describe('Package', function() {
         checksum = hash.digest('hex');
         assert.strictEqual(
           checksum,
-          'bbdb29842043ab88456536d15f8ea34eee115e62678bda000e95442b07ec7c76'
+          'a68764d99625f1dc1495215d64a929f3253b0b25428b5c5b15d83822ca6a488c'
         );
         fs.unlinkSync(outfile);
         done();

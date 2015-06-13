@@ -1,6 +1,6 @@
 {
-  "alias":"myexample123",
-  "name":"Example package",
-  "version":"1.0",
-  "url":"http://nxtresource.com/test.tgz"
+  "alias": "myexample123",
+  "name": "Example package",
+  "version": "1.0",
+  "url": "http://nxtresource.com/test.tgz"
 }
