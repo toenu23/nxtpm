@@ -2,6 +2,11 @@ var fs = require('fs');
 var assert = require('assert');
 var crypto = require('crypto');
 
+global.NXTPM = {
+  appName: 'nxtpm',
+  account: 'NXT-PACK-JWE9-VGPZ-CZN9D',
+};
+
 var config = require('../lib/config.js');
 var init = require('../lib/init.js');
 var nxt = require('../lib/nxt.js');
