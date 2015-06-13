@@ -1,7 +1,10 @@
-module.exports = function run() {
+module.exports = function run(command, args) {
 
-  var APP_NAME = 'nxtpm';
-  var VERSION = '0.0.4';
+  global.NXTPM = {
+    appName: 'nxtpm',
+    version: '0.0.4',
+    account: 'NXT-PACK-JWE9-VGPZ-CZN9D',
+  };
 
   var fs = require('fs');
   var path = require('path');
@@ -12,39 +15,47 @@ module.exports = function run() {
   prompt.message = '';
   prompt.delimiter = '';
 
+  if (!command) {
+    NXTPM.cli = true;
+    command = process.argv[2];
+  }
+  if (command) {
+    command = command.toLowerCase();
+  }
+
   var homeDir = process.env.HOME
     || process.env.HOMEPATH
     || process.env.USERPROFILE;
 
-  var confDir = homeDir + '/.nxtpm';
+  var confDir = homeDir + '/.' + NXTPM.appName;
   var configDirExists = fs.existsSync(confDir);
-  var configFileExists = fs.existsSync(confDir + '/nxtpm.json');
+  var configFileExists = fs.existsSync(confDir + '/' + NXTPM.appName + '.json');
   if (!configDirExists || !configFileExists) {
-    config.createConfig();
+    config.createConfig(args);
     return;
-  }
-
-  var command = process.argv[2];
-  if (command) {
-    command = command.toLowerCase();
   }
 
   switch (command) {
     case 'init': {
       var init = require('./lib/init.js');
-      init.initPackage();
+      init.initPackage(args);
       break;
     }
     case 'config': {
-      config.createConfig();
+      config.createConfig(args);
       break;
     }
     case 'install': {
-      var alias = process.argv[3];
-      var target = process.argv[4];
+      var alias = NXTPM.cli
+        ? process.argv[3]
+        : args.alias;
+      var target = NXTPM.cli
+        ? process.argv[4]
+        : args.target;
       if (!alias) {
         return console.log(
-          'Usage: nxtpm install <package> <targetdir>'
+          'Usage: %s install <package> <targetdir>',
+          NXTPM.appName
         );
       }
       var installPackage = require('./lib/install.js');
@@ -52,11 +63,16 @@ module.exports = function run() {
       break;
     }
     case 'package': {
-      var dir = process.argv[3];
-      var outfile = process.argv[4];
+      var dir = NXTPM.cli
+        ? process.argv[3]
+        : args.dir;
+      var outfile = NXTPM.cli
+        ? process.argv[4]
+        : args.outfile;
       if (!dir) {
         return console.log(
-          'Usage: nxtpm package <dir> <outfile>'
+          'Usage: %s package <dir> <outfile>',
+          NXTPM.appName
         );
       }
       var package = require('./lib/package.js');
@@ -64,15 +80,21 @@ module.exports = function run() {
       break;
     }
     case 'publish': {
-      var dir = process.argv[3];
+      var dir = NXTPM.cli
+        ? process.argv[3]
+        : args.dir;
+      var secretPhrase = NXTPM.cli
+        ? null
+        : args.secretPhrase;
       if (!dir) {
         return console.log(
-          'Usage: nxtpm publish <dir>'
+          'Usage: %s publish <dir>',
+          NXTPM.appName
         );
       }
       var publishPackage = require('./lib/publish.js');
       dir = path.resolve(dir);
-      publishPackage(dir);
+      publishPackage(dir, secretPhrase);
       break;
     }
     default: {
@@ -82,10 +104,12 @@ module.exports = function run() {
           command
         );
       }
-      console.log(APP_NAME + ' ' + VERSION);
+      console.log(NXTPM.appName + ' ' + NXTPM.version);
       console.log(
-        'Usage: nxtpm <config|install|init|package|publish> <args>'
+        'Usage: %s <config|install|init|package|publish> <args>',
+        NXTPM.appName
       );
     }
   }
 };
+
