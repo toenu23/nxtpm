@@ -1,4 +1,4 @@
-module.exports = function run(command, args) {
+module.exports = function run(command, args, callback) {
 
   global.NXTPM = {
     appName: 'nxtpm',
@@ -38,11 +38,11 @@ module.exports = function run(command, args) {
   switch (command) {
     case 'init': {
       var init = require('./lib/init.js');
-      init.initPackage(args);
+      init.initPackage(args, callback);
       break;
     }
     case 'config': {
-      config.createConfig(args);
+      config.createConfig(args, callback);
       break;
     }
     case 'install': {
@@ -59,7 +59,7 @@ module.exports = function run(command, args) {
         );
       }
       var installPackage = require('./lib/install.js');
-      installPackage(alias, target);
+      installPackage(alias, target, callback);
       break;
     }
     case 'package': {
@@ -76,7 +76,7 @@ module.exports = function run(command, args) {
         );
       }
       var package = require('./lib/package.js');
-      package.createPackage(dir, outfile);
+      package.createPackage(dir, outfile, callback);
       break;
     }
     case 'publish': {
@@ -94,7 +94,7 @@ module.exports = function run(command, args) {
       }
       var publishPackage = require('./lib/publish.js');
       dir = path.resolve(dir);
-      publishPackage(dir, secretPhrase);
+      publishPackage(dir, secretPhrase, callback);
       break;
     }
     default: {
