@@ -1,0 +1,62 @@
+[
+  {
+    "transport": "http",
+    "host": "nrs.scripterron.org",
+    "port": 6876,
+    "path": "/nxt",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/x-www-form-urlencoded"
+    }
+  },
+  {
+    "transport": "http",
+    "host": "testnet-03.nxt-nodes.net",
+    "port": 6876,
+    "path": "/nxt",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/x-www-form-urlencoded"
+    }
+  },
+  {
+    "transport": "http",
+    "host": "174.140.168.136",
+    "port": 6876,
+    "path": "/nxt",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/x-www-form-urlencoded"
+    }
+  },
+  {
+    "transport": "http",
+    "host": "brangdon.duckdns.org",
+    "port": 6876,
+    "path": "/nxt",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/x-www-form-urlencoded"
+    }
+  },
+  {
+    "transport": "http",
+    "host": "107.170.3.62",
+    "port": 6876,
+    "path": "/nxt",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/x-www-form-urlencoded"
+    }
+  },
+  {
+    "transport": "http",
+    "host": "bug.airdns.org",
+    "port": 6876,
+    "path": "/nxt",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/x-www-form-urlencoded"
+    }
+  }
+]

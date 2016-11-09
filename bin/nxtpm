@@ -1,2 +1,4 @@
 #!/usr/bin/env node
-require('../index.js').run();
+const NxtpmCli = require('../index.js').NxtpmCli;
+const app = new NxtpmCli();
+app.run();
