@@ -1,5 +1,5 @@
 Usage: nxtpm [--version] [--help]
-       nxtpm install <package> [<dir>] [--version=<version>]
+       nxtpm install <package> [<dir>]
        nxtpm init [<dir>]
        nxtpm package [<dir>] [<outfile>] [--format=tgz|zip] [--update [--set-version=<version>] [--set-url=<url>]]
        nxtpm publish [<dir>] [--secret=<passphrase>|--no-sign]
