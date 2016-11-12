@@ -3,7 +3,7 @@
 
   const Package = require('./lib/package');
   const PackageBuilder = require('./lib/packageBuilder');
-  const NxtpmCli = require('./lib/cli');
+  const NxtpmCli = require('./lib/cli/cli');
   const config = require('./lib/config');
 
 
