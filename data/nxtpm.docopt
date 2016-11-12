@@ -1,16 +1,18 @@
-Usage: nxtpm install <package> [<dir>] [--version=<version>]
-nxtpm init [<dir>]
-nxtpm package [<dir>] [<outfile>] [--format=tgz|zip] [--update [--version=<version>] [--url=<url>]]
-nxtpm publish [<dir>] [--secret=<passphrase>|--no-sign]
-nxtpm extend <package> [--times=<number>] [--secret=<passphrase>|--no-sign]
-nxtpm info <package>
-nxtpm version
-nxtpm help
+Usage: nxtpm [--version] [--help]
+       nxtpm install <package> [<dir>] [--version=<version>]
+       nxtpm init [<dir>]
+       nxtpm package [<dir>] [<outfile>] [--format=tgz|zip] [--update [--set-version=<version>] [--set-url=<url>]]
+       nxtpm publish [<dir>] [--secret=<passphrase>|--no-sign]
+       nxtpm extend <package> [--times=<number>] [--secret=<passphrase>|--no-sign]
+       nxtpm info <package>
 
 Options:
-  --version=VERSION   # Package version
-  --format=FORMAT     # Package format (tgz or zip)
-  --url=URL           # Package URL
-  --times=TIMES       # How many times to extend [default: 1]  
-  --secret=SECRET     # Nxt secret phrase
-  --no-sign           # Do not sign transactions; Will output unsigned trasaction instead
+ --format=FORMAT         # Package format (tgz or zip)
+ --update                # Update nxtpm.json with new sha256 value
+ --set-version=VERSION   # Set package version in nxtpm.json
+ --set-url=URL           # Set package URL in nxtpm.json
+ --times=TIMES           # How many times to extend [default: 1]
+ --secret=SECRET         # Nxt secret phrase
+ --no-sign               # Do not sign transactions; Output unsigned transaction instead
+ --version               # Display nxtpm version
+ --help                  # Show this help text

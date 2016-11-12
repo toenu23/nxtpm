@@ -1,4 +1,16 @@
 #!/usr/bin/env node
+const path = require('path');
+const neodoc = require('neodoc');
+const jetpack = require('fs-jetpack');
 const NxtpmCli = require('../index.js').NxtpmCli;
-const app = new NxtpmCli();
-app.run();
+
+
+const docDir = path.join(__dirname, '..', 'data');
+const doc = jetpack.read(
+  path.join(docDir, 'nxtpm.docopt')
+);
+const args = neodoc.run(doc);
+
+
+const cli = new NxtpmCli(args);
+cli.run();
