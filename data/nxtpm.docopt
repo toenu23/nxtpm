@@ -1,0 +1,16 @@
+Usage: nxtpm install <package> [<dir>] [--version=<version>]
+nxtpm init [<dir>]
+nxtpm package [<dir>] [<outfile>] [--format=tgz|zip] [--update [--version=<version>] [--url=<url>]]
+nxtpm publish [<dir>] [--secret=<passphrase>|--no-sign]
+nxtpm extend <package> [--times=<number>] [--secret=<passphrase>|--no-sign]
+nxtpm info <package>
+nxtpm version
+nxtpm help
+
+Options:
+  --version=VERSION   # Package version
+  --format=FORMAT     # Package format (tgz or zip)
+  --url=URL           # Package URL
+  --times=TIMES       # How many times to extend [default: 1]  
+  --secret=SECRET     # Nxt secret phrase
+  --no-sign           # Do not sign transactions; Will output unsigned trasaction instead
