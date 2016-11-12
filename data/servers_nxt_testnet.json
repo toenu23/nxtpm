@@ -1,16 +1,6 @@
 [
   {
     "transport": "http",
-    "host": "nrs.scripterron.org",
-    "port": 6876,
-    "path": "/nxt",
-    "method": "POST",
-    "headers": {
-      "Content-Type": "application/x-www-form-urlencoded"
-    }
-  },
-  {
-    "transport": "http",
     "host": "testnet-03.nxt-nodes.net",
     "port": 6876,
     "path": "/nxt",
@@ -21,7 +11,27 @@
   },
   {
     "transport": "http",
-    "host": "174.140.168.136",
+    "host": "109.230.199.49",
+    "port": 6876,
+    "path": "/nxt",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/x-www-form-urlencoded"
+    }
+  },
+  {
+    "transport": "http",
+    "host": "198.105.223.72",
+    "port": 6876,
+    "path": "/nxt",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/x-www-form-urlencoded"
+    }
+  },
+  {
+    "transport": "http",
+    "host": "54.175.75.102",
     "port": 6876,
     "path": "/nxt",
     "method": "POST",
@@ -51,7 +61,7 @@
   },
   {
     "transport": "http",
-    "host": "bug.airdns.org",
+    "host": "nrs.scripterron.org",
     "port": 6876,
     "path": "/nxt",
     "method": "POST",
