@@ -1,13 +1,13 @@
 {
   "name": "nxtpm",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "mocha test"
   },
   "author": "toenu <toenu23@gmail.com> (http://nxtresource.com/)",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "doublechecker": "0.0.1",
     "fs-jetpack": "^0.10.1",
