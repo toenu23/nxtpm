@@ -11,7 +11,9 @@
     Package: Package,
     PackageBuilder: PackageBuilder,
     NxtpmCli: NxtpmCli,
-    setConfig: config.overrides,
+    setConfig: function(data) {
+      config.overrides(data);
+    },
   };
 
 
