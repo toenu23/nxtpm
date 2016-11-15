@@ -13,6 +13,7 @@
     NxtpmCli: NxtpmCli,
     setConfig: function(key, value) {
       config.set(key, value);
+      Package.applyConfig();
     },
   };
 
