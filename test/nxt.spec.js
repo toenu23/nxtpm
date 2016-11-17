@@ -4,21 +4,21 @@ const nxt = new Nxt();
 const nxtpm = require('../index.js');
 const config = require('../lib/config.js');
 
-describe('Nxt', function() {
-  it('does an API request', function(done) {
+describe('Nxt', () => {
+  it('does an API request', done => {
     nxt.request({ requestType: 'getAlias', aliasName: 'test5' })
-    .then(function(data) {
+    .then(data => {
       assert(true);
       done();
-    }, function(err) {
+    }, err => {
       assert(false)
       done();
     });
   });
 });
 
-describe('Config', function() {
-  it('Can set custom config', function(done) {
+describe('Config', () => {
+  it('Can set custom config', done => {
     nxtpm.setConfig('nxt:numSources', 123);
     const numSources = config.get('nxt:numSources');
     assert.equal(numSources, 123);
