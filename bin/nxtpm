@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+process.env.NXTPM_CLI = true;
 const path = require('path');
 const neodoc = require('neodoc');
 const jetpack = require('fs-jetpack');
