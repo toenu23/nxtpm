@@ -3,6 +3,7 @@ const path = require('path');
 const neodoc = require('neodoc');
 const jetpack = require('fs-jetpack');
 const NxtpmCli = require('../index.js').NxtpmCli;
+const log = require('../lib/log');
 
 
 const docDir = path.join(__dirname, '..', 'data');
@@ -13,4 +14,6 @@ const args = neodoc.run(doc);
 
 
 const cli = new NxtpmCli(args);
-cli.run();
+cli.run().then(() => {}, err => {
+  log.error(err.stack || err);
+});
