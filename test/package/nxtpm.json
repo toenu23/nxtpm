@@ -1,11 +1,11 @@
 {
   "name": "test6",
   "description": "This is a test package",
-  "channel":"nxtpm",
+  "channel": "nxtpm",
   "author": "nxtpm",
   "tags": "test, package",
   "main": "index.html",
-  "version": "0.0.0",
+  "version": "2.2.2",
   "resources": {
     "0.0.0": {
       "url": "http://test.package",

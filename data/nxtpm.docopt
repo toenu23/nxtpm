@@ -1,7 +1,7 @@
 Usage: nxtpm [--version] [--help]
        nxtpm install <package> [<dir>]
        nxtpm init [<dir>]
-       nxtpm package [<dir>] [<outfile>] [--format=<tgz|zip>] [--update [--set-version=<version>] [--set-url=<url>]]
+       nxtpm package [<dir>] [<outfile>] [--format=<tgz|zip>] [--update [--set-version=<version>] [--set-url=<url>] [--comment=<comment>]]
        nxtpm publish [<dir>] [--secret=<passphrase>] [--dry-run]
        nxtpm extend <package> [--secret=<passphrase>] [--dry-run]
        nxtpm info <package>
@@ -11,6 +11,7 @@ Options:
  --update                # Update nxtpm.json with new sha256 value
  --set-version=VERSION   # Set package version in nxtpm.json
  --set-url=URL           # Set package URL in nxtpm.json
+ --comment               # Version comment in nxtpm.json
  --secret=SECRET         # Nxt secret phrase
  --dry-run               # Do not broadcast transactions
  --version               # Display nxtpm version
