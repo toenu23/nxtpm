@@ -5,7 +5,9 @@ const jetpack = require('fs-jetpack');
 const nxtpm = require('../index.js');
 const config = require('../lib/util/config.js');
 const nxt = require('../lib/util/nxt.js');
-let cli;
+
+
+let passphrase = jetpack.read(__dirname + '/secret.json', 'json').pw;
 
 
 describe('Validation', () => {
@@ -54,6 +56,7 @@ describe('Config', () => {
     .then(data => {
       assert.equal(data.frequency, 1);
       assert.equal(data.score, 1);
+      nxtpm.setConfig('nxt:numSources', 3);
       done();
     }, err => {
       console.log(err.stack || err);
@@ -133,10 +136,14 @@ describe('Archive', () => {
 
 describe('Publish', () => {
 
-  it('Creates publish transactions', () => {
+  it('Creates publish transactions', done => {
     const file = path.join(__dirname, 'package', 'nxtpm.json');
     const mft = jetpack.read(file, 'json');
-    expect(() => nxtpm.publish(mft, 'test', true)).to.not.throw;
+    nxtpm.publish(mft, passphrase, true).then(() => {
+      done();
+    }, err => {
+      console.log(err.stack || err);
+    })
   });
 
 });
@@ -144,8 +151,12 @@ describe('Publish', () => {
 
 describe('Extend', () => {
 
-  it('Creates extend transaction', () => {
-    expect(() => nxtpm.extend('test6', 'test', true)).to.not.throw;
+  it('Creates extend transaction', done => {
+    nxtpm.extend('test6', passphrase, true).then(() => {
+      done();
+    }, err => {
+      console.log(err.stack || err);
+    });
   });
 
 });
